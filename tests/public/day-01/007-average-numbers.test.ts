@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { averageNumbers } from "../../../src/exercises/day-01/007-average-numbers";
 
+// Goal: calculate the arithmetic mean, returning null when there are no values.
+
 describe("averageNumbers", () => {
   it("returns the arithmetic mean for several values", () => {
     const values = [2, 4, 7];

@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { countGreaterThan } from "../../../src/exercises/day-01/003-count-greater-than";
 
+// Goal: count values strictly greater than the given threshold. Equal values do not count.
+
 describe("countGreaterThan", () => {
   it("counts only values that are strictly greater than the minimum", () => {
     const values = [1, 3, 4, 3, 9];

@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { findLargestNumber } from "../../../src/exercises/day-01/002-find-largest-number";
 
+// Goal: find the largest number; return undefined when the input array is empty.
+
 describe("findLargestNumber", () => {
   it("returns the largest value from an unsorted list", () => {
     const values = [4, 12, -3, 8];

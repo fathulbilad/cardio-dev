@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { summarizeNumbers } from "../../../src/exercises/day-01/009-summarize-numbers";
 
+// Goal: return one summary object containing count, sum, minimum, and maximum values.
+
 describe("summarizeNumbers", () => {
   it("returns count, sum, min, and max for mixed values", () => {
     const values = [4, -2, 10, 1];

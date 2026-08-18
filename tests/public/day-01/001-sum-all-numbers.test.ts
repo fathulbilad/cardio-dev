@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { sumAllNumbers } from "../../../src/exercises/day-01/001-sum-all-numbers";
 
+// Goal: add every number together, including negative values, without changing the input array.
+
 describe("sumAllNumbers", () => {
   it("adds every number in the array", () => {
     const values = [5, -2, 9, 0];

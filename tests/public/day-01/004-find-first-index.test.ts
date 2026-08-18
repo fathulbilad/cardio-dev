@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { findFirstIndex } from "../../../src/exercises/day-01/004-find-first-index";
 
+// Goal: return the position of the first exact match, or -1 when no value matches.
+
 describe("findFirstIndex", () => {
   it("returns the index of the first matching value", () => {
     const values = ["blue", "green", "blue", "red"];

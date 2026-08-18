@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { collapseAdjacentDuplicates } from "../../../src/exercises/day-01/010-collapse-adjacent-duplicates";
 
+// Goal: remove repeated neighboring values while keeping duplicates separated by another value.
+
 describe("collapseAdjacentDuplicates", () => {
   it("collapses repeated runs down to one value each", () => {
     const values = [1, 1, 2, 2, 2, 3, 1, 1];

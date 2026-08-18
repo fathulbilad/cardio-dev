@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { keepEvenNumbers } from "../../../src/exercises/day-01/005-keep-even-numbers";
 
+// Goal: create a new array containing only even numbers, preserving order and duplicates.
+
 describe("keepEvenNumbers", () => {
   it("returns only even numbers in the original order", () => {
     const values = [7, 2, 4, 9, 6, 2];
