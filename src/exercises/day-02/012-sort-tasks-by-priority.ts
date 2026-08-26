@@ -6,5 +6,8 @@ export type Task = {
 };
 
 export function sortTasksByPriority(tasks: readonly Task[]): Task[] {
+  // const data = tasks.
+
+
   throw new Error("Not implemented");
 }

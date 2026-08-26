@@ -24,6 +24,7 @@ export function summarizeNumbers(values: number[]): NumberSummary {
   }
 
   return numberData
+  // i can use reduce if i know how to use it LMAO
   // const data = values.reduce((prevValue, currValue, idx, array): any => {
   //   numberData.count = array.length
   //   numberData.sum = numberData.sum + array[idx]
