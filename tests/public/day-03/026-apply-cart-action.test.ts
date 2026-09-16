@@ -1,8 +1,19 @@
+/*
+ * Exercise contract:
+ * 1. Add quantities to an existing item or append a new one.
+ * 2. If a set action targets a missing id with a positive quantity, append it.
+ * 3. Remove an item when its set quantity is zero or below.
+ * 4. Return the same state reference when the action changes nothing.
+ * 5. Add at least one learner-authored test for the no-op action.
+ * 6. Do not mutate the state object or any item object.
+ * 7. Preserve the order of untouched items.
+ */
+
 import { describe, expect, it } from "vitest";
 import { applyCartAction } from "../../../src/exercises/day-03/026-apply-cart-action";
 
 describe("applyCartAction", () => {
-  it("updates quantities immutably, removes empty items, and leaves the state unchanged for no-op actions", () => {
+  it("adds quantities, removes items set to a nonpositive quantity, and preserves no-op state", () => {
     const state = {
       items: [
         { id: "tea", quantity: 1 },
@@ -31,3 +42,13 @@ describe("applyCartAction", () => {
     expect(state).toEqual(original);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: state transitions, reducer like logic, objects, arrays
+ * Search keywords:
+ * - "TypeScript reducer discriminated union actions"
+ * - "JavaScript immutable cart quantity update"
+ * - "JavaScript structural sharing return same state no change"
+ */

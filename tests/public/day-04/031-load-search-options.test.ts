@@ -1,3 +1,14 @@
+/*
+ * Exercise contract:
+ * 1. Trim the query before calling the loader.
+ * 2. Include only active users whose name or alias contains the trimmed query, case-insensitively.
+ * 3. If the trimmed query is empty, include all active users.
+ * 4. Return options sorted by label ascending, then id ascending.
+ * 5. Do not mutate the loader result array or its records.
+ * 6. Use the observable async result rather than timers.
+ * 7. Return objects shaped exactly as { id, label }.
+ */
+
 import { describe, expect, it, vi } from "vitest";
 import {
   loadSearchOptions,
@@ -5,7 +16,7 @@ import {
 } from "../../../src/exercises/day-04/031-load-search-options";
 
 describe("loadSearchOptions", () => {
-  it("loads, filters, and sorts active matches without mutating source records", async () => {
+  it("trims the query, matches active names or aliases ignoring case, and sorts by label then id without mutation", async () => {
     const users: ApiSearchUser[] = [
       { id: "u2", name: "Sally", active: true, aliases: ["Ally"] },
       { id: "u1", name: "Alice", active: true, aliases: ["Ace"] },
@@ -41,3 +52,13 @@ describe("loadSearchOptions", () => {
     ]);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: promises, async await, filtering, sorting, immutability
+ * Search keywords:
+ * - "TypeScript async function await Promise"
+ * - "JavaScript filter map sort async result"
+ * - "JavaScript case insensitive search aliases"
+ */

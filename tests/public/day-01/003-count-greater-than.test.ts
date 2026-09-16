@@ -1,3 +1,10 @@
+/*
+ * Exercise contract:
+ * 1. Count only numbers that are strictly greater than the threshold.
+ * 2. Return 0 for an empty array.
+ * 3. Do not mutate the input array.
+ */
+
 import { describe, expect, it } from "vitest";
 import { countGreaterThan } from "../../../src/exercises/day-01/003-count-greater-than";
 
@@ -20,3 +27,13 @@ describe("countGreaterThan", () => {
     expect(countGreaterThan([5, 6, 5, 7], 5)).toBe(2);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: loops, conditions, counting
+ * Search keywords:
+ * - "JavaScript count array items matching condition"
+ * - "JavaScript Array.filter length"
+ * - "JavaScript for of conditional counter"
+ */

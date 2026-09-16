@@ -1,3 +1,18 @@
+/*
+ * Exercise contract:
+ * 1. Expose an initial idle state with empty query, empty options, and null errorMessage.
+ * 2. search(query) must trim the query before using it.
+ * 3. If the trimmed query is empty, abort any in-flight request, move to idle, and skip the loader call.
+ * 4. For non-empty queries, start loading, abort the previous in-flight request, and ignore stale results.
+ * 5. On success, store active matching options using the D4-E01 filtering and sorting contract.
+ * 6. On a latest non-abort failure, store an error state with the trimmed query and message.
+ * 7. retry() should repeat the latest non-empty query only when the current state is error.
+ * 8. search() and retry() should resolve without rejecting because of request failure or cancellation.
+ * 9. Add one learner-written test for either the empty-query reset path or the retry path.
+ * 10. Use AbortSignal instead of arbitrary timeouts.
+ * 11. Replace state immutably instead of mutating prior snapshots.
+ */
+
 import { describe, expect, it, vi } from "vitest";
 import {
   AutocompleteModel,
@@ -150,3 +165,13 @@ describe("AutocompleteModel", () => {
     });
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: cancellation, stale response protection, async state, retry, filtering, sorting, immutability
+ * Search keywords:
+ * - "autocomplete async request cancellation retry pattern"
+ * - "JavaScript AbortController empty query reset"
+ * - "latest request wins state machine TypeScript"
+ */

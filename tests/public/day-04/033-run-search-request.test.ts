@@ -1,3 +1,14 @@
+/*
+ * Exercise contract:
+ * 1. Emit a loading state immediately with the trimmed query, empty options, and null errorMessage.
+ * 2. Then emit either a success state with normalized options or an error state with a message.
+ * 3. Reuse the same trimming, filtering, and sorting contract as D4-E01.
+ * 4. Resolve after the final state is emitted, even when the loader fails.
+ * 5. Emit fresh state objects instead of mutating a previous state snapshot.
+ * 6. Do not depend on real-time waits.
+ * 7. Do not reject because of the loader failure.
+ */
+
 import { describe, expect, it, vi } from "vitest";
 import {
   runSearchRequest,
@@ -102,3 +113,13 @@ describe("runSearchRequest", () => {
     ]);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: async state, promises, error handling, immutability, filtering, sorting
+ * Search keywords:
+ * - "TypeScript async callback loading success error state"
+ * - "JavaScript immutable state snapshots callback"
+ * - "TypeScript Promise resolve after catch"
+ */

@@ -1,3 +1,15 @@
+/*
+ * Exercise contract:
+ * 1. Expose an initial idle state with empty query, empty options, and null errorMessage.
+ * 2. When search(query) starts, trim the query and move state to loading immediately.
+ * 3. When a newer search starts before an older one settles, ignore the older success or error result.
+ * 4. When the latest request succeeds, store normalized options using the D4-E01 filtering and sorting contract.
+ * 5. search() should resolve after its own request settles or becomes stale, without rejecting because of request failure.
+ * 6. Add one learner-written test for a stale-response case.
+ * 7. Replace state immutably instead of mutating prior snapshots.
+ * 8. Do not use timers to decide which response is latest.
+ */
+
 import { describe, expect, it, vi } from "vitest";
 import {
   LatestSearchStore,
@@ -114,3 +126,13 @@ describe("LatestSearchStore", () => {
     });
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: stale response protection, async state, promises, immutability, error handling
+ * Search keywords:
+ * - "JavaScript ignore stale async response request id"
+ * - "latest request wins async state pattern"
+ * - "TypeScript class immutable state snapshot"
+ */

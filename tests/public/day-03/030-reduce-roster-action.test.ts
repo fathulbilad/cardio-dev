@@ -1,8 +1,17 @@
+/*
+ * Exercise contract:
+ * 1. Sort active members before inactive members. Within each activity group, sort roles as owner, editor, then viewer. Break equal roles by name ascending, then id ascending.
+ * 2. Replace an existing member on upsert instead of duplicating it.
+ * 3. Add at least one learner-authored test for the stable-ordering rule.
+ * 4. Do not mutate the incoming state or members array.
+ * 5. Return the original state when the action makes no change.
+ */
+
 import { describe, expect, it } from "vitest";
 import { reduceRosterAction } from "../../../src/exercises/day-03/030-reduce-roster-action";
 
 describe("reduceRosterAction", () => {
-  it("keeps the roster sorted after updates and returns the same state for missing removals", () => {
+  it("sorts active first, roles as owner-editor-viewer, then name and id, and preserves missing removals", () => {
     const state = {
       members: [
         { id: "3", name: "Zoe", role: "viewer" as const, active: false },
@@ -26,3 +35,13 @@ describe("reduceRosterAction", () => {
     expect(reduceRosterAction(deactivated, { type: "remove", id: "missing" })).toBe(deactivated);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: domain rules, state transitions, references, reducer like logic
+ * Search keywords:
+ * - "JavaScript upsert remove deactivate array reducer"
+ * - "JavaScript sort active before inactive boolean comparator"
+ * - "JavaScript multi field stable sorting objects"
+ */

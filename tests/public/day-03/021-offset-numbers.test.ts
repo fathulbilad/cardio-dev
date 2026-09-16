@@ -1,3 +1,12 @@
+/*
+ * Exercise contract:
+ * 1. Return each value increased by the provided offset.
+ * 2. Preserve the original order.
+ * 3. Leave the input array unchanged.
+ * 4. Do not mutate the input array.
+ * 5. Handle empty arrays without special setup.
+ */
+
 import { describe, expect, it } from "vitest";
 import { offsetNumbers } from "../../../src/exercises/day-03/021-offset-numbers";
 
@@ -11,3 +20,13 @@ describe("offsetNumbers", () => {
     expect(values).toEqual(original);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: functions, scope, arrays, mapping
+ * Search keywords:
+ * - "JavaScript Array.map add value"
+ * - "JavaScript immutable array transformation"
+ * - "TypeScript readonly array map"
+ */

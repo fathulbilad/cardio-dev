@@ -1,3 +1,11 @@
+/*
+ * Exercise contract:
+ * 1. Return a new array containing only the even numbers.
+ * 2. Keep the original order and preserve duplicates.
+ * 3. Add one learner-written test proving the input array is unchanged.
+ * 4. Do not mutate the input array.
+ */
+
 import { describe, expect, it } from "vitest";
 import { keepEvenNumbers } from "../../../src/exercises/day-01/005-keep-even-numbers";
 
@@ -26,3 +34,13 @@ describe("keepEvenNumbers", () => {
     expect(keepEvenNumbers([8, 8, 10])).toEqual([8, 8, 10]);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: conditions, building arrays, immutability
+ * Search keywords:
+ * - "JavaScript filter even numbers from array"
+ * - "JavaScript remainder operator percent"
+ * - "JavaScript Array.filter immutable"
+ */

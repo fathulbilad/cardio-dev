@@ -1,3 +1,11 @@
+/*
+ * Exercise contract:
+ * 1. Sum only values greater than 0.
+ * 2. Ignore zeros and negative numbers.
+ * 3. Add one learner-written test for an all-nonpositive array.
+ * 4. Do not mutate the input array.
+ */
+
 import { describe, expect, it } from "vitest";
 import { sumPositiveNumbers } from "../../../src/exercises/day-01/006-sum-positive-numbers";
 
@@ -20,3 +28,13 @@ describe("sumPositiveNumbers", () => {
     expect(sumPositiveNumbers([11])).toBe(11);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: conditions, accumulation, reuse
+ * Search keywords:
+ * - "JavaScript sum only positive numbers"
+ * - "JavaScript filter and reduce array"
+ * - "JavaScript conditional accumulator"
+ */

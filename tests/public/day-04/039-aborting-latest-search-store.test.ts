@@ -1,3 +1,15 @@
+/*
+ * Exercise contract:
+ * 1. Expose the same idle/loading/success/error state shape as D4-E07.
+ * 2. When search(query) starts, trim the query and abort any previous in-flight request.
+ * 3. If an aborted older request later rejects or resolves, it must not replace the latest state.
+ * 4. If the latest request fails for a non-abort reason, store its message in error state.
+ * 5. search() should resolve after its own request settles or is superseded, without rejecting because of request failure.
+ * 6. Add one learner-written test for the abort-on-replacement path.
+ * 7. Use AbortSignal for cancellation.
+ * 8. Replace state immutably instead of mutating prior snapshots.
+ */
+
 import { describe, expect, it, vi } from "vitest";
 import {
   AbortingLatestSearchStore,
@@ -82,3 +94,13 @@ describe("AbortingLatestSearchStore", () => {
     });
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: cancellation, abort signal, stale response protection, async state, error handling
+ * Search keywords:
+ * - "JavaScript AbortController cancel previous request"
+ * - "latest request wins abort stale response"
+ * - "DOMException AbortError handling TypeScript"
+ */

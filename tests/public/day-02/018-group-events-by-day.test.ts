@@ -1,3 +1,14 @@
+/*
+ * Exercise contract:
+ * 1. Group events by their UTC calendar day.
+ * 2. Sort the day keys from earliest to latest.
+ * 3. Keep the original event order inside each day bucket.
+ * 4. Add one learner-authored test for a day key boundary.
+ * 5. Use the YYYY-MM-DD date part of each ISO timestamp.
+ * 6. Do not reorder events inside a day bucket.
+ * 7. The input array must remain unchanged.
+ */
+
 import { expect, it } from "vitest";
 import { groupEventsByDay, type AuditEvent } from "../../../src/exercises/day-02/018-group-events-by-day";
 
@@ -21,3 +32,13 @@ it("groups events by UTC day, sorts the day keys, and keeps the original order w
   ]);
   expect(events).toEqual(snapshot);
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: objects, grouping, sorting, dates
+ * Search keywords:
+ * - "JavaScript group timestamps by UTC calendar date"
+ * - "JavaScript Date toISOString UTC day"
+ * - "JavaScript sort object entries by date key"
+ */

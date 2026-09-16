@@ -1,3 +1,11 @@
+/*
+ * Exercise contract:
+ * 1. Return count, sum, min, and max in one object.
+ * 2. Use undefined for min and max when the array is empty.
+ * 3. Add one learner-written test for the empty-array summary.
+ * 4. Do not mutate the input array.
+ */
+
 import { describe, expect, it } from "vitest";
 import { summarizeNumbers } from "../../../src/exercises/day-01/009-summarize-numbers";
 
@@ -35,3 +43,13 @@ describe("summarizeNumbers", () => {
     });
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: accumulation, comparison, object output
+ * Search keywords:
+ * - "JavaScript calculate count sum min max array"
+ * - "JavaScript single pass array accumulator object"
+ * - "TypeScript optional undefined object values"
+ */

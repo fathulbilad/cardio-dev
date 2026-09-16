@@ -1,3 +1,15 @@
+/*
+ * Exercise contract:
+ * 1. Trim the query before calling the loader.
+ * 2. Reject immediately with signal.reason when the signal is already aborted.
+ * 3. Pass the provided signal to the loader.
+ * 4. If the signal aborts before the loader settles, reject with signal.reason and ignore later resolution.
+ * 5. On success, reuse the same filtering and sorting contract as D4-E01.
+ * 6. Add one learner-written test for an abort path.
+ * 7. Do not use arbitrary delays.
+ * 8. Do not mutate the loader result array or its records.
+ */
+
 import { describe, expect, it, vi } from "vitest";
 import {
   loadSearchOptionsWithSignal,
@@ -67,3 +79,13 @@ describe("loadSearchOptionsWithSignal", () => {
     deferred.resolve([{ id: "u1", name: "Alice", active: true }]);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: cancellation, abort signal, promises, filtering, sorting
+ * Search keywords:
+ * - "JavaScript AbortController AbortSignal reason"
+ * - "race Promise against AbortSignal event"
+ * - "TypeScript reject already aborted signal"
+ */

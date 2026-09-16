@@ -1,7 +1,19 @@
+/*
+ * Exercise contract:
+ * 1. Keep only active entries.
+ * 2. Deduplicate by playerId, keeping the highest score; if scores tie, keep the newer updatedAt value.
+ * 3. Sort the final rows by score descending, then displayName ascending, then playerId ascending.
+ * 4. Assign ranks starting at 1 after sorting.
+ * 5. Add one learner-authored test for a duplicate or score-tie case.
+ * 6. The input array and entry objects must not be mutated.
+ * 7. The same input must always produce the same ranks.
+ * 8. Tie handling must be explicit and deterministic.
+ */
+
 import { expect, it } from "vitest";
 import { prepareLeaderboard, type LeaderboardEntry } from "../../../src/exercises/day-02/020-prepare-leaderboard";
 
-it("keeps the best active score for each player, resolves ties deterministically, and assigns ranks from the sorted order", () => {
+it("keeps each active player's best score, sorts score descending then name and id ascending, and assigns ranks", () => {
   const entries: LeaderboardEntry[] = [
     {
       playerId: "p1",
@@ -48,3 +60,13 @@ it("keeps the best active score for each player, resolves ties deterministically
   ]);
   expect(entries).toEqual(snapshot);
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: map, deduplication, sorting, filtering, records
+ * Search keywords:
+ * - "JavaScript deduplicate leaderboard highest score Map"
+ * - "JavaScript sort comparator multiple tie breakers"
+ * - "JavaScript assign rank after sorting map index"
+ */

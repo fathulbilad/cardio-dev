@@ -1,3 +1,15 @@
+/*
+ * Exercise contract:
+ * 1. Return an object with a load(id) method.
+ * 2. Concurrent load calls for the same id must share one in-flight request.
+ * 3. Cache a successful normalized result so later calls for the same id do not refetch.
+ * 4. Cache an inactive user as null.
+ * 5. Do not cache a rejected request; the next call should retry.
+ * 6. Add one learner-written test for the retry-after-failure path.
+ * 7. Return active users as { id, label }.
+ * 8. Keep the observable behavior deterministic for repeated calls.
+ */
+
 import { describe, expect, it, vi } from "vitest";
 import {
   createSharedUserLoader,
@@ -70,3 +82,13 @@ describe("createSharedUserLoader", () => {
     expect(fetchUserById).toHaveBeenCalledTimes(1);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: concurrency, request deduplication, caching, promises, immutability
+ * Search keywords:
+ * - "JavaScript cache in flight Promise Map"
+ * - "request deduplication concurrent calls same key"
+ * - "remove rejected Promise from cache retry"
+ */

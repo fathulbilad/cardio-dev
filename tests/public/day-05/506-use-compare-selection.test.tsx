@@ -1,3 +1,15 @@
+/*
+ * Exercise contract:
+ * 1. Initialize from a list of ids but keep each id only once.
+ * 2. toggleSelected adds a missing id or removes an existing id.
+ * 3. Preserve first-selected order in selectedIds.
+ * 4. clearSelected removes every selection.
+ * 5. isSelected reports whether an id is currently selected.
+ * 6. Add one learner-written test for duplicate initial ids or a clear-selection invariant.
+ * 7. Selections should update immutably.
+ * 8. Repeated toggles must stay deterministic.
+ */
+
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { expect, it } from "vitest";
@@ -66,3 +78,13 @@ it("toggles unique selections, preserves first-selected order, and clears everyt
   await user.click(screen.getByRole("button", { name: "Clear selection" }));
   expect(screen.getByText("No selected items.")).toBeInTheDocument();
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: hooks, state transitions, deduplication, immutability, sets
+ * Search keywords:
+ * - "React custom hook toggle selection array"
+ * - "renderHook act Testing Library"
+ * - "JavaScript deduplicate initial ids Set"
+ */

@@ -8,5 +8,11 @@ export type Contact = {
 };
 
 export function mergeContactsByEmail(contacts: readonly Contact[]): Contact[] {
+  const data = <Contact[]>[]
+  for (const contact of contacts) {
+    if (contact.subscribed) data.push(contact)
+  }
+
+
   throw new Error("Not implemented");
 }

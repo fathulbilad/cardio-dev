@@ -1,3 +1,14 @@
+/*
+ * Exercise contract:
+ * 1. Return query, setQuery, onlyFeatured, toggleOnlyFeatured, and visibleProducts from the hook.
+ * 2. Filter visible products by a case-insensitive name match and the featured toggle.
+ * 3. Sort visibleProducts by name ascending.
+ * 4. Preserve control state across rerenders when the product list prop changes.
+ * 5. Add one learner-written test for a rerender or source-immutability invariant.
+ * 6. Do not mutate the incoming product array or records.
+ * 7. visibleProducts must stay derived from the latest inputs and hook state.
+ */
+
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { expect, it } from "vitest";
@@ -73,3 +84,13 @@ it("derives visible products from query and featured state and keeps control sta
   ]);
   expect(products).toEqual(snapshot);
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: hooks, react state, filtering, derived state, rerenders
+ * Search keywords:
+ * - "React custom hook state derived values"
+ * - "renderHook rerender preserve state"
+ * - "React hook filter featured products"
+ */

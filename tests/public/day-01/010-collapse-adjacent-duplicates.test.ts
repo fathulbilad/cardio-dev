@@ -1,3 +1,11 @@
+/*
+ * Exercise contract:
+ * 1. Return a new array with consecutive equal values collapsed to one copy.
+ * 2. Keep separated duplicate runs as separate entries.
+ * 3. Add one learner-written test for a repeated-run case.
+ * 4. Do not mutate the input array.
+ */
+
 import { describe, expect, it } from "vitest";
 import { collapseAdjacentDuplicates } from "../../../src/exercises/day-01/010-collapse-adjacent-duplicates";
 
@@ -23,3 +31,13 @@ describe("collapseAdjacentDuplicates", () => {
     expect(collapseAdjacentDuplicates([])).toEqual([]);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: indexing, conditions, run compression
+ * Search keywords:
+ * - "JavaScript remove adjacent duplicate array values"
+ * - "JavaScript compare current item with previous index"
+ * - "run length encoding consecutive duplicates"
+ */

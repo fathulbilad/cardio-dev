@@ -1,3 +1,16 @@
+/*
+ * Exercise contract:
+ * 1. Return query, setQuery, results, loading, and error from the hook.
+ * 2. Wait for delayMs before starting a request for the current query.
+ * 3. Clear the pending timer when the query changes before the delay elapses.
+ * 4. Ignore an older request result if a newer query has already started.
+ * 5. Set loading while the active request is running and clear it afterward.
+ * 6. Expose an error state when the active request rejects.
+ * 7. Add one learner-written test for a rejection path or stale-response invariant.
+ * 8. Behavior must be deterministic under fake timers.
+ * 9. Do not mutate returned result arrays.
+ */
+
 import { act, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, expect, it, vi } from "vitest";
@@ -110,3 +123,13 @@ it("reports an error when the debounced request rejects", async () => {
   failed.reject(new Error("boom"));
   expect(await screen.findByRole("alert")).toHaveTextContent("Could not search products.");
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: hooks, async, debounce, stale responses, effects
+ * Search keywords:
+ * - "React debounced search hook fake timers"
+ * - "Vitest vi useFakeTimers advanceTimersByTimeAsync"
+ * - "React ignore stale async response useEffect"
+ */

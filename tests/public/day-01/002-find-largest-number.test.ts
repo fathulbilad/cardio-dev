@@ -1,3 +1,10 @@
+/*
+ * Exercise contract:
+ * 1. Return the largest number in the array.
+ * 2. Return undefined for an empty array.
+ * 3. Do not mutate the input array.
+ */
+
 import { describe, expect, it } from "vitest";
 import { findLargestNumber } from "../../../src/exercises/day-01/002-find-largest-number";
 
@@ -20,3 +27,13 @@ describe("findLargestNumber", () => {
     expect(findLargestNumber([])).toBeUndefined();
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: loops, comparison, arrays
+ * Search keywords:
+ * - "JavaScript find largest number in array"
+ * - "JavaScript compare values in for of loop"
+ * - "TypeScript function return undefined"
+ */

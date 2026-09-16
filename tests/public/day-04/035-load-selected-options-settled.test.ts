@@ -1,3 +1,14 @@
+/*
+ * Exercise contract:
+ * 1. Reuse the unique concurrent loading contract from D4-E04.
+ * 2. Return successful active options and failed ids in separate arrays.
+ * 3. Preserve first-seen id order in both arrays.
+ * 4. Do not reject because one or more individual requests fail.
+ * 5. Add one learner-written test for a failure-path ordering case.
+ * 6. Each duplicate id should affect the output at most once.
+ * 7. Inactive successful users are skipped rather than treated as failures.
+ */
+
 import { describe, expect, it, vi } from "vitest";
 import {
   loadSelectedOptionsSettled,
@@ -57,3 +68,13 @@ describe("loadSelectedOptionsSettled", () => {
     });
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: concurrency, partial failure, promises, deduplication, immutability
+ * Search keywords:
+ * - "JavaScript Promise.allSettled preserve input order"
+ * - "TypeScript PromiseSettledResult fulfilled rejected"
+ * - "JavaScript partial failure concurrent requests"
+ */

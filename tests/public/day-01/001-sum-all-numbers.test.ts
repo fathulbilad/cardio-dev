@@ -1,3 +1,10 @@
+/*
+ * Exercise contract:
+ * 1. Return the sum of every number in the array.
+ * 2. Return 0 for an empty array.
+ * 3. Do not mutate the input array.
+ */
+
 import { describe, expect, it } from "vitest";
 import { sumAllNumbers } from "../../../src/exercises/day-01/001-sum-all-numbers";
 
@@ -23,3 +30,13 @@ describe("sumAllNumbers", () => {
     expect(values).toEqual([7]);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: array accumulation, loops, immutable input
+ * Search keywords:
+ * - "JavaScript sum all numbers in array"
+ * - "JavaScript Array.reduce accumulator"
+ * - "TypeScript readonly array"
+ */

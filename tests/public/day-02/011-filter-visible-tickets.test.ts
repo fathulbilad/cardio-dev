@@ -1,3 +1,13 @@
+/*
+ * Exercise contract:
+ * 1. Return only tickets where archived is false.
+ * 2. Keep the remaining tickets in their original order.
+ * 3. Do not mutate the input array or ticket objects.
+ * 4. The output must be a new array.
+ * 5. Order is preserved from the source array.
+ * 6. Archived tickets are always excluded.
+ */
+
 import { expect, it } from "vitest";
 import { getVisibleTickets, type Ticket } from "../../../src/exercises/day-02/011-filter-visible-tickets";
 
@@ -15,3 +25,13 @@ it("returns only unarchived tickets in their original order without mutating the
   ]);
   expect(tickets).toEqual(snapshot);
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: arrays, filtering, records
+ * Search keywords:
+ * - "JavaScript Array.filter objects by boolean property"
+ * - "JavaScript preserve array order when filtering"
+ * - "TypeScript readonly object array"
+ */

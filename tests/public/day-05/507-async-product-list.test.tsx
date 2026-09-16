@@ -1,3 +1,16 @@
+/*
+ * Exercise contract:
+ * 1. Call loadProducts when the component mounts.
+ * 2. Show Loading products... in a status region while the request is in flight.
+ * 3. Render the resolved products in an accessible list named Products.
+ * 4. Show No products available. when the request resolves to an empty list.
+ * 5. Show Could not load products. in an alert with a Retry button when the request fails.
+ * 6. Retry should start a fresh request.
+ * 7. Add one learner-written test for an error-path or empty-state invariant.
+ * 8. Keep behavior deterministic across repeated renders.
+ * 9. Do not swallow the retry path in a page refresh.
+ */
+
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { expect, it, vi } from "vitest";
@@ -65,3 +78,13 @@ it("renders an empty state when the loader returns no products", async () => {
 
   expect(await screen.findByText("No products available.")).toBeInTheDocument();
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: react effects, async, loading state, error handling, retry
+ * Search keywords:
+ * - "React useEffect async loading error retry"
+ * - "Testing Library waitFor async component"
+ * - "React retry failed request button"
+ */

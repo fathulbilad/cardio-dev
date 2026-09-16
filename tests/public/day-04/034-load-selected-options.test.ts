@@ -1,3 +1,14 @@
+/*
+ * Exercise contract:
+ * 1. Request each unique id at most once.
+ * 2. Start the unique requests without waiting for earlier ids to finish.
+ * 3. Skip inactive users.
+ * 4. Return active options in the first-seen order of the input ids.
+ * 5. Do not mutate the ids array.
+ * 6. Preserve duplicates only for request coordination, not the output list.
+ * 7. Return objects shaped exactly as { id, label }.
+ */
+
 import { describe, expect, it, vi } from "vitest";
 import {
   loadSelectedOptions,
@@ -58,3 +69,13 @@ describe("loadSelectedOptions", () => {
     ]);
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: concurrency, promises, deduplication, immutability, mapping
+ * Search keywords:
+ * - "JavaScript Promise.all concurrent requests"
+ * - "JavaScript deduplicate ids preserve first order Set"
+ * - "TypeScript filter inactive async results"
+ */

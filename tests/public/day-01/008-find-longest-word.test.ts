@@ -1,3 +1,11 @@
+/*
+ * Exercise contract:
+ * 1. Return the longest word in the array.
+ * 2. If two words tie for length, return the first one.
+ * 3. Add one learner-written test for a tied-length case.
+ * 4. Do not mutate the input array.
+ */
+
 import { describe, expect, it } from "vitest";
 import { findLongestWord } from "../../../src/exercises/day-01/008-find-longest-word";
 
@@ -20,3 +28,13 @@ describe("findLongestWord", () => {
     expect(findLongestWord([])).toBeUndefined();
   });
 });
+
+/*
+ * Research hint: use this only if you are stuck.
+ *
+ * Concepts: comparison, strings, ties
+ * Search keywords:
+ * - "JavaScript find longest string in array"
+ * - "JavaScript reduce keep first value on tie"
+ * - "JavaScript string length comparison"
+ */
