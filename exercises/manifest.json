@@ -49,12 +49,12 @@
       "Empty input produces 0."
     ],
     "completion": {
-      "publicTestsPass": false,
+      "publicTestsPass": true,
       "explanationRecorded": false,
       "learnerTestsAdded": 0
     },
     "telemetry": {
-      "attempts": 0,
+      "attempts": 1,
       "hintLevelUsed": 0,
       "activeMinutes": 0
     }
@@ -112,12 +112,12 @@
       "Empty input produces undefined."
     ],
     "completion": {
-      "publicTestsPass": false,
+      "publicTestsPass": true,
       "explanationRecorded": false,
       "learnerTestsAdded": 0
     },
     "telemetry": {
-      "attempts": 0,
+      "attempts": 1,
       "hintLevelUsed": 0,
       "activeMinutes": 0
     }
@@ -183,12 +183,12 @@
       "Counting is based on the original order only, not sorting or mutation."
     ],
     "completion": {
-      "publicTestsPass": false,
+      "publicTestsPass": true,
       "explanationRecorded": false,
       "learnerTestsAdded": 0
     },
     "telemetry": {
-      "attempts": 0,
+      "attempts": 1,
       "hintLevelUsed": 0,
       "activeMinutes": 0
     }
@@ -253,12 +253,12 @@
       "The input array is preserved."
     ],
     "completion": {
-      "publicTestsPass": false,
+      "publicTestsPass": true,
       "explanationRecorded": false,
       "learnerTestsAdded": 0
     },
     "telemetry": {
-      "attempts": 0,
+      "attempts": 1,
       "hintLevelUsed": 0,
       "activeMinutes": 0
     }
@@ -1101,7 +1101,7 @@
       "D1-E02"
     ],
     "context": "production",
-    "objective": "Keep the newest subscribed contact for each email and sort the survivors by name.",
+    "objective": "Keep the newest subscribed contact for each email and sort survivors by last name, first name, then email.",
     "requirements": [
       "Ignore contacts where subscribed is false.",
       "Deduplicate by email, keeping the latest updatedAt value.",
@@ -1886,7 +1886,7 @@
       "D2-E04"
     ],
     "context": "combined",
-    "objective": "Keep the newest task per id and rank the remaining tasks deterministically.",
+    "objective": "Keep the newest task per id, then sort by priority descending, title ascending, and id ascending.",
     "requirements": [
       "Keep one task per id, choosing the newest updatedAt value.",
       "If updatedAt ties, keep the later task from the input.",
@@ -2054,14 +2054,16 @@
     "context": "combined",
     "objective": "Move an order through allowed statuses and append notes immutably.",
     "requirements": [
-      "Allow place, ship, cancel, and note events.",
-      "Reject invalid status transitions by returning the original order reference.",
-      "Append notes without mutating the existing notes array.",
+      "A place event may change only draft to placed.",
+      "A ship event may change only placed to shipped and must record its provided shippedAt timestamp.",
+      "A cancel event may change draft or placed to cancelled.",
+      "A note event may append a note in any status without changing the status.",
+      "Reject every other status transition by returning the original order reference.",
       "Add at least one learner-authored test for the rejected transition."
     ],
     "constraints": [
       "Do not mutate the order or its notes array.",
-      "Ship should record the provided timestamp only when the transition is allowed."
+      "A successful event may change only the fields documented for that event."
     ],
     "examples": [
       {
@@ -2302,9 +2304,9 @@
       "D2-E04"
     ],
     "context": "production",
-    "objective": "Upsert, deactivate, or remove members and keep the roster sorted by business rules.",
+    "objective": "Upsert, deactivate, or remove members, then sort by active status, the owner-editor-viewer role order, name, and id.",
     "requirements": [
-      "Sort active members before inactive members, then sort each group by role, then name, then id.",
+      "Sort active members before inactive members. Within each activity group, sort roles as owner, editor, then viewer. Break equal roles by name ascending, then id ascending.",
       "Replace an existing member on upsert instead of duplicating it.",
       "Add at least one learner-authored test for the stable-ordering rule."
     ],
@@ -3156,7 +3158,7 @@
     "requirements": [
       "Render only in-stock products.",
       "Order visible products by name ascending.",
-      "Show each item as visible text in the format Name — $12.34.",
+      "Render an accessible list named Products and show each item as visible text in the format Name — $12.34.",
       "Show No products available. when nothing can be rendered."
     ],
     "constraints": [
@@ -3229,7 +3231,7 @@
       "Ignore rows missing an id or a displayable name.",
       "Deduplicate by id, keeping the newest updatedAt record.",
       "Sort featured rows first, then by name ascending.",
-      "Render an accessible table with Product and Category columns.",
+      "Render an accessible table named Inventory with Product and Category columns.",
       "Add one learner-written test for an equal-timestamp or invalid-row case."
     ],
     "constraints": [
@@ -3306,8 +3308,8 @@
     "requirements": [
       "Render a labeled searchbox named Search products.",
       "Filter visible in-stock products by a case-insensitive name match.",
-      "Keep visible products sorted by name ascending.",
-      "Expose the visible count in a status region.",
+      "Keep visible products sorted by name ascending in an accessible list named Products.",
+      "Expose the visible count in a status region using the format <count> products.",
       "Show No matching products. when the current query matches nothing.",
       "Add one learner-written test for case-insensitive matching or empty search text."
     ],
@@ -3373,7 +3375,7 @@
     "requirements": [
       "Render a labeled searchbox named Search catalog.",
       "Render a button that toggles the sort label between Sort: A to Z and Sort: Z to A.",
-      "Filter by a case-insensitive name match and then sort the visible products by the active direction.",
+      "Filter by a case-insensitive name match and then sort the visible products by the active direction in a list named Catalog products.",
       "Show No catalog products. when the active controls hide every item.",
       "Add one learner-written test for the second toggle or empty-result case."
     ],
@@ -3568,10 +3570,10 @@
     "objective": "Render loading, success, empty, and error states around an async product request.",
     "requirements": [
       "Call loadProducts when the component mounts.",
-      "Show Loading products... while the request is in flight.",
-      "Render the resolved products in an accessible list.",
+      "Show Loading products... in a status region while the request is in flight.",
+      "Render the resolved products in an accessible list named Products.",
       "Show No products available. when the request resolves to an empty list.",
-      "Show Could not load products. with a Retry button when the request fails.",
+      "Show Could not load products. in an alert with a Retry button when the request fails.",
       "Retry should start a fresh request.",
       "Add one learner-written test for an error-path or empty-state invariant."
     ],
@@ -3698,7 +3700,7 @@
       "Ignore records missing an id or a displayable name.",
       "Keep only in-stock products.",
       "Deduplicate by id, keeping the newest updatedAt record.",
-      "Render a labeled searchbox and a labeled category select.",
+      "Render a table named Catalog, a searchbox named Search products, and a category select named Category.",
       "Sort visible rows by featured first, then price ascending, then name ascending.",
       "Show No matching rows. when the current controls hide every valid row.",
       "Add one learner-written test for a duplicate-id, invalid-record, or tie-order invariant."
@@ -3762,11 +3764,12 @@
     "objective": "Build an accessible async explorer that loads, normalizes, filters, sorts, retries, and rejects stale results.",
     "requirements": [
       "Call searchProducts with the current query on mount and whenever the query changes.",
-      "Show Loading products... during the active request.",
-      "Show Could not load products. with a Retry button when the active request fails.",
+      "Show Loading products... in a status region during the active request.",
+      "Show Could not load products. in an alert with a Retry button when the active request fails.",
       "Retry the latest failed query instead of resetting to an older one.",
       "Normalize the latest response by removing invalid rows, keeping only in-stock rows, and deduplicating by id with newest updatedAt wins.",
-      "Render a labeled Category select and a sort button that toggles between low-to-high and high-to-low price order after featured-first grouping.",
+      "Render a searchbox named Search products, a table named Products, and a select named Category.",
+      "Render a sort button that toggles between Sort by price: low to high and Sort by price: high to low. Apply that price direction after featured-first grouping.",
       "Ignore stale responses from older requests.",
       "Show No products found. when the latest normalized result set is empty after filters.",
       "Add one learner-written test covering an uncovered failure path or invariant risk."
