@@ -18,19 +18,19 @@
       "needsSpacedReview": false
     },
     "accumulation": {
-      "mastery": 0,
-      "successfulUses": 0,
+      "mastery": 0.175,
+      "successfulUses": 1,
       "recentFailures": 0,
-      "lastSeenExercise": null,
-      "highestLevelPassed": 0,
+      "lastSeenExercise": "D1-E01",
+      "highestLevelPassed": 1,
       "needsSpacedReview": false
     },
     "arrays": {
-      "mastery": 0,
-      "successfulUses": 0,
+      "mastery": 0.319,
+      "successfulUses": 2,
       "recentFailures": 0,
-      "lastSeenExercise": null,
-      "highestLevelPassed": 0,
+      "lastSeenExercise": "D1-E02",
+      "highestLevelPassed": 1,
       "needsSpacedReview": false
     },
     "async": {
@@ -98,11 +98,11 @@
       "needsSpacedReview": false
     },
     "comparison": {
-      "mastery": 0,
-      "successfulUses": 0,
+      "mastery": 0.175,
+      "successfulUses": 1,
       "recentFailures": 0,
-      "lastSeenExercise": null,
-      "highestLevelPassed": 0,
+      "lastSeenExercise": "D1-E02",
+      "highestLevelPassed": 1,
       "needsSpacedReview": false
     },
     "concurrency": {
@@ -114,19 +114,19 @@
       "needsSpacedReview": false
     },
     "conditions": {
-      "mastery": 0,
-      "successfulUses": 0,
+      "mastery": 0.175,
+      "successfulUses": 1,
       "recentFailures": 0,
-      "lastSeenExercise": null,
-      "highestLevelPassed": 0,
+      "lastSeenExercise": "D1-E03",
+      "highestLevelPassed": 1,
       "needsSpacedReview": false
     },
     "counting": {
-      "mastery": 0,
-      "successfulUses": 0,
+      "mastery": 0.175,
+      "successfulUses": 1,
       "recentFailures": 0,
-      "lastSeenExercise": null,
-      "highestLevelPassed": 0,
+      "lastSeenExercise": "D1-E03",
+      "highestLevelPassed": 1,
       "needsSpacedReview": false
     },
     "dates": {
@@ -250,11 +250,11 @@
       "needsSpacedReview": false
     },
     "indexing": {
-      "mastery": 0,
-      "successfulUses": 0,
+      "mastery": 0.175,
+      "successfulUses": 1,
       "recentFailures": 0,
-      "lastSeenExercise": null,
-      "highestLevelPassed": 0,
+      "lastSeenExercise": "D1-E04",
+      "highestLevelPassed": 2,
       "needsSpacedReview": false
     },
     "loading-state": {
@@ -266,11 +266,11 @@
       "needsSpacedReview": false
     },
     "loops": {
-      "mastery": 0,
-      "successfulUses": 0,
+      "mastery": 0.427,
+      "successfulUses": 3,
       "recentFailures": 0,
-      "lastSeenExercise": null,
-      "highestLevelPassed": 0,
+      "lastSeenExercise": "D1-E03",
+      "highestLevelPassed": 1,
       "needsSpacedReview": false
     },
     "map": {
@@ -466,19 +466,19 @@
       "needsSpacedReview": false
     },
     "search": {
-      "mastery": 0,
-      "successfulUses": 0,
+      "mastery": 0.175,
+      "successfulUses": 1,
       "recentFailures": 0,
-      "lastSeenExercise": null,
-      "highestLevelPassed": 0,
+      "lastSeenExercise": "D1-E04",
+      "highestLevelPassed": 2,
       "needsSpacedReview": false
     },
     "sentinel-values": {
-      "mastery": 0,
-      "successfulUses": 0,
+      "mastery": 0.175,
+      "successfulUses": 1,
       "recentFailures": 0,
-      "lastSeenExercise": null,
-      "highestLevelPassed": 0,
+      "lastSeenExercise": "D1-E04",
+      "highestLevelPassed": 2,
       "needsSpacedReview": false
     },
     "set": {
