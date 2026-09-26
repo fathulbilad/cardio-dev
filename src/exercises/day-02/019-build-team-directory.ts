@@ -12,5 +12,12 @@ export type TeamDirectoryRow = {
 };
 
 export function buildTeamDirectory(members: readonly TeamMember[]): TeamDirectoryRow[] {
+  const newMember = new Map<string, string[]>()
+
+
+
+
+
+
   throw new Error("Not implemented");
 }

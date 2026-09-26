@@ -3,7 +3,7 @@
   "currentDay": 1,
   "dailyTarget": 10,
   "currentBatchNumber": 1,
-  "lastVerifiedAt": "2026-09-03T06:20:43.229Z",
+  "lastVerifiedAt": "2026-09-21T08:23:12.746Z",
   "historySummaryPath": "progress/history-summary.json",
   "recentBatchIds": [
     "D1-E01",
@@ -14,7 +14,7 @@
   "exercises": {
     "D1-E01": {
       "status": "tests-pass",
-      "attempts": 1,
+      "attempts": 3,
       "hintLevelUsed": 0,
       "activeMinutes": null,
       "startedAt": null,
@@ -24,7 +24,7 @@
       "bossTestsPass": null,
       "explanationRecorded": false,
       "learnerTestsAdded": 0,
-      "lastVerifiedAt": "2026-09-03T06:20:43.229Z",
+      "lastVerifiedAt": "2026-09-21T08:23:12.746Z",
       "lastResult": "pass",
       "lastCommit": null,
       "testFiles": [
@@ -33,7 +33,7 @@
     },
     "D1-E02": {
       "status": "tests-pass",
-      "attempts": 1,
+      "attempts": 3,
       "hintLevelUsed": 0,
       "activeMinutes": null,
       "startedAt": null,
@@ -43,7 +43,7 @@
       "bossTestsPass": null,
       "explanationRecorded": false,
       "learnerTestsAdded": 0,
-      "lastVerifiedAt": "2026-09-03T06:20:43.229Z",
+      "lastVerifiedAt": "2026-09-21T08:23:12.746Z",
       "lastResult": "pass",
       "lastCommit": null,
       "testFiles": [
@@ -52,7 +52,7 @@
     },
     "D1-E03": {
       "status": "tests-pass",
-      "attempts": 1,
+      "attempts": 3,
       "hintLevelUsed": 0,
       "activeMinutes": null,
       "startedAt": null,
@@ -62,7 +62,7 @@
       "bossTestsPass": null,
       "explanationRecorded": false,
       "learnerTestsAdded": 0,
-      "lastVerifiedAt": "2026-09-03T06:20:43.229Z",
+      "lastVerifiedAt": "2026-09-21T08:23:12.746Z",
       "lastResult": "pass",
       "lastCommit": null,
       "testFiles": [
@@ -71,7 +71,7 @@
     },
     "D1-E04": {
       "status": "tests-pass",
-      "attempts": 1,
+      "attempts": 3,
       "hintLevelUsed": 0,
       "activeMinutes": null,
       "startedAt": null,
@@ -81,7 +81,7 @@
       "bossTestsPass": null,
       "explanationRecorded": false,
       "learnerTestsAdded": 0,
-      "lastVerifiedAt": "2026-09-03T06:20:43.229Z",
+      "lastVerifiedAt": "2026-09-21T08:23:12.746Z",
       "lastResult": "pass",
       "lastCommit": null,
       "testFiles": [
@@ -883,6 +883,34 @@
       "verifiedAt": "2026-09-03T06:20:43.229Z",
       "passRate": 1,
       "firstAttemptRate": 1,
+      "explanationRate": 0,
+      "strongHintCount": 0
+    },
+    {
+      "batchId": "verify-2026-09-21T08:22:30.206Z",
+      "exerciseIds": [
+        "D1-E01",
+        "D1-E02",
+        "D1-E03",
+        "D1-E04"
+      ],
+      "verifiedAt": "2026-09-21T08:22:30.206Z",
+      "passRate": 1,
+      "firstAttemptRate": 0,
+      "explanationRate": 0,
+      "strongHintCount": 0
+    },
+    {
+      "batchId": "verify-2026-09-21T08:23:12.746Z",
+      "exerciseIds": [
+        "D1-E01",
+        "D1-E02",
+        "D1-E03",
+        "D1-E04"
+      ],
+      "verifiedAt": "2026-09-21T08:23:12.746Z",
+      "passRate": 1,
+      "firstAttemptRate": 0,
       "explanationRate": 0,
       "strongHintCount": 0
     }
